@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/patient-care-quiz/static/js/main.c6bfe1a5.js",
+    "index.html": "/patient-care-quiz/index.html",
+    "main.c6bfe1a5.js.map": "/patient-care-quiz/static/js/main.c6bfe1a5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c6bfe1a5.js"
+  ]
+}
