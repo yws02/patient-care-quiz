@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Patient Care Quiz</title>
+  <script type="text/javascript">
+    // Single-page app redirect for GitHub Pages
+    var pathSegments = window.location.pathname.split('/');
+    var repoName = pathSegments[1];
+    var path = window.location.href.replace('/'+repoName, '');
+    var redirectTo = '/' + repoName;
+    sessionStorage.setItem('redirect', path);
+    window.location.replace(redirectTo);
+  </script>
+</head>
+<body></body>
+</html>

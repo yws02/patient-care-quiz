@@ -7,7 +7,10 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors()); // Add this line
+// Allow requests from GitHub Pages and localhost
+app.use(cors({
+  origin: ['https://yws02.github.io', 'http://localhost:3000']
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
