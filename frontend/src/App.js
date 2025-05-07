@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Header from './components/Header';
@@ -9,10 +9,12 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/quiz" component={Quiz} />
-        </Switch>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz" element={<Quiz />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

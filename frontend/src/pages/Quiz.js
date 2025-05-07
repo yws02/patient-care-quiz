@@ -9,12 +9,16 @@ const Quiz = () => {
 
     const handlePatientDataSubmit = async (data) => {
         setPatientData(data);
-        const questions = await fetchQuizQuestions(data);
-        setQuizQuestions(questions);
+        try {
+            const questions = await fetchQuizQuestions(data);
+            setQuizQuestions(questions);
+        } catch (error) {
+            console.error('Error fetching quiz questions:', error);
+        }
     };
 
     return (
-        <div>
+        <div className="container">
             <h1>Patient Care Quiz</h1>
             <PatientForm onSubmit={handlePatientDataSubmit} />
             {quizQuestions.length > 0 && <QuizDisplay questions={quizQuestions} />}

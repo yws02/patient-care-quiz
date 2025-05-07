@@ -7,15 +7,19 @@ const Home = () => {
     const [quizData, setQuizData] = useState(null);
 
     const handleFormSubmit = async (patientData) => {
-        const quiz = await generateQuiz(patientData);
-        setQuizData(quiz);
+        try {
+            const quiz = await generateQuiz(patientData);
+            setQuizData(quiz);
+        } catch (error) {
+            console.error('Error generating quiz:', error);
+        }
     };
 
     return (
-        <div>
+        <div className="container">
             <h1>Patient Care Quiz</h1>
             <PatientForm onSubmit={handleFormSubmit} />
-            {quizData && <QuizDisplay quizData={quizData} />}
+            {quizData && quizData.questions && <QuizDisplay questions={quizData.questions} />}
         </div>
     );
 };
